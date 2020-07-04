@@ -13,6 +13,8 @@
 		8D8654C324B0F4A400F9E56C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D8654C124B0F4A400F9E56C /* Main.storyboard */; };
 		8D8654C524B0F4A700F9E56C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D8654C424B0F4A700F9E56C /* Assets.xcassets */; };
 		8D8654C824B0F4A700F9E56C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D8654C624B0F4A700F9E56C /* LaunchScreen.storyboard */; };
+		8D8654D024B1126C00F9E56C /* 11503_PolarBear_V2_FINAL.obj in Resources */ = {isa = PBXBuildFile; fileRef = 8D8654CF24B1126C00F9E56C /* 11503_PolarBear_V2_FINAL.obj */; };
+		8D8654D224B1128400F9E56C /* bear.scn in Resources */ = {isa = PBXBuildFile; fileRef = 8D8654D124B1128400F9E56C /* bear.scn */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		8D8654C424B0F4A700F9E56C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D8654C724B0F4A700F9E56C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D8654C924B0F4A700F9E56C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D8654CF24B1126C00F9E56C /* 11503_PolarBear_V2_FINAL.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 11503_PolarBear_V2_FINAL.obj; path = "../../../../Downloads/PolarBear_V2_L1.123c1a5cda02-33e9-424d-bcb4-f0179e384160/11503_PolarBear_V2_FINAL.obj"; sourceTree = "<group>"; };
+		8D8654D124B1128400F9E56C /* bear.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = bear.scn; path = "../../../../Downloads/PolarBear_V2_L1.123c1a5cda02-33e9-424d-bcb4-f0179e384160/bear.scn"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 		8D8654BA24B0F4A400F9E56C /* SceneKitTest */ = {
 			isa = PBXGroup;
 			children = (
+				8D8654CF24B1126C00F9E56C /* 11503_PolarBear_V2_FINAL.obj */,
+				8D8654D124B1128400F9E56C /* bear.scn */,
 				8D8654BB24B0F4A400F9E56C /* AppDelegate.swift */,
 				8D8654BD24B0F4A400F9E56C /* art.scnassets */,
 				8D8654BF24B0F4A400F9E56C /* ViewController.swift */,
@@ -125,7 +131,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D8654D024B1126C00F9E56C /* 11503_PolarBear_V2_FINAL.obj in Resources */,
 				8D8654BE24B0F4A400F9E56C /* art.scnassets in Resources */,
+				8D8654D224B1128400F9E56C /* bear.scn in Resources */,
 				8D8654C824B0F4A700F9E56C /* LaunchScreen.storyboard in Resources */,
 				8D8654C524B0F4A700F9E56C /* Assets.xcassets in Resources */,
 				8D8654C324B0F4A400F9E56C /* Main.storyboard in Resources */,
