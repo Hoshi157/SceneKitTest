@@ -9,7 +9,7 @@
 import UIKit
 import SceneKit
 import ARKit
-
+// タップしたらshipを追加表示する(この方法だと環境の変化に適応できない)
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
@@ -22,12 +22,18 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
+        sceneView.debugOptions = SCNDebugOptions.showFeaturePoints
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let scene = SCNScene()
         
         // Set the scene to the view
         sceneView.scene = scene
+        // これ入れないとobjectの色がつかない
+        sceneView.autoenablesDefaultLighting = true
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(tap))
+        sceneView.addGestureRecognizer(gesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +51,29 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Pause the view's session
         sceneView.session.pause()
+    }
+    
+    @objc func tap(sender: UITapGestureRecognizer) {
+        guard let scene = SCNScene(named: "ship.scn", inDirectory: "art.scnassets") else {
+            return
+        }
+        let shipNode = (scene.rootNode.childNode(withName: "ship", recursively: false))!
+        // nodeだけを取り出す
+        
+        let position = sender.location(in: sceneView) // tapしたlocation取得
+        let results = sceneView.hitTest(position, types: .featurePoint) // sceneView上の特徴点取得(配列)
+        
+        if !results.isEmpty {
+            let hitTestResult = results.first! //　最初のhitTest
+            let transform = hitTestResult.worldTransform // hitTestを空間全体に変換
+            
+            shipNode.position = SCNVector3( // objectのposition
+                transform.columns.3.x,
+                transform.columns.3.y,
+                transform.columns.3.z
+            )
+            sceneView.scene.rootNode.addChildNode(shipNode) // 追加
+        }
     }
 
     // MARK: - ARSCNViewDelegate
